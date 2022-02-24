@@ -15,7 +15,6 @@ const GettingStarted = () => {
       <div className='buttonContainer'>
         <button className='btnPrimary'>Get Started</button>
         <button className='btnSecondary'><BsGoogle />&nbsp; Login with Google</button>
-
       </div>
     </div>
   </div>)

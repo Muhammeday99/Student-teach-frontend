@@ -32,7 +32,7 @@ const Landing = () => {
     <Documentation />
     <div className='cardsContainer'>
       {cards.map(card => {
-        return <PersonCard name={card.name} description={card.description} />
+        return <PersonCard name={card.name} key={card.name} description={card.description} />
       })}
     </div>
   </div>)

@@ -1,0 +1,7 @@
+.messageContainer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 1em 1em 0;
+    color: white;
+}

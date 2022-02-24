@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/login.css'
 import { BsGoogle } from 'react-icons/bs';
+import useAuth from '../hooks/useAuth';
 
 const Login = () => {
-  return <div className='loginContainer'>
-    <input type='text' placeholder='Email' className='email'/>
-    <input type='password' placeholder='Password' className='email'/>
-    <button className='btnSecondary'><div>Log in</div></button>
-    <button className='btnSecondary'><div><BsGoogle />&nbsp; Login with Google </div></button>
-  </div>
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useAuth();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(email, password)
+  }
+
+  return (
+    <form className='loginContainer' onSubmit={(e) => handleSubmit(e)}>
+      <input type='text' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} className='email' />
+      <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} className='email' />
+      <button className='btnSecondary' type='submit'>Log in</button>
+      <button className='btnSecondary'><BsGoogle />&nbsp; Login with Google </button>
+    </form>
+  )
 }
 
 export default Login

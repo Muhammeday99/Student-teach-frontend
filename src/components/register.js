@@ -7,12 +7,10 @@ const Register = () => {
   const [subjects,setSubjects] = useState([])
   return <div className='loginContainer'>
     {active.next && <>
-      <input type='text' placeholder='User name' className='email' />
     <input type='text' placeholder='First name' className='email' />
     <input type='text' placeholder='Last Name' className='email'/>
     <input type='text' placeholder='Email' className='email' />
     <input type='password' placeholder='Password' className='email'/>
-    <input type='password' placeholder='Confirm password' className='email' />
     <button className='btnSecondary' onClick={() => setActive({next:false,register:true})}><div>Next</div></button></>}
     {active.register && <>
       <select name="subjects" className='email' onChange={(e) => {

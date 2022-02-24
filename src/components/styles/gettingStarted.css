@@ -3,24 +3,24 @@
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  height: 500px;
+  min-height: 500px;
 }
-
 
 .gettingStarted{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
-  height: 50%;
+  max-width: 600px;
 }
 
 .buttonContainer{
   display: flex;
-  width: 30%;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
 }
+
 .btnPrimary{
   display: flex;
   font-weight: bolder;

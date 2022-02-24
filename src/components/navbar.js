@@ -11,12 +11,12 @@ const NavBar = (props) => {
         }} width='72' />
       <div className='navBtnContainer'>
       {menuButtonList.map((item) => {
-        return <span onClick={() => {
+        return <a key={item} onClick={() => {
           props.setPage(item.toLowerCase())
-        }}>{item}</span>
+        }}>{item}</a>
       })}
       </div>
-      <div className='navBtnContainer' style={{width: '10%'}}>
+      <div className='navBtnContainer'>
         <button className='btnPrimary' onClick={() => {
           props.setPage('register')
         }}>Register</button>

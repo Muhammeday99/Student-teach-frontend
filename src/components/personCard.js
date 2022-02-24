@@ -2,8 +2,6 @@ import React from 'react';
 import a from '../assets/avatar.png'
 import './styles/personCard.css'
 
-
-
 const PersonCard = (props) => {
   let { avatar, name, description } = props
   if (!avatar) {

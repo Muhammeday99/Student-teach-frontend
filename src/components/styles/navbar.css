@@ -10,10 +10,11 @@
 
 .navBtnContainer{
   display: flex;
-  width: 25%;
-  justify-content: space-evenly;
+  width: 30%;
+  justify-content: flex-end;
   font-size: large;
   font-weight: bold;
+  gap: 1em;
 }
 
 .btnPrimary{

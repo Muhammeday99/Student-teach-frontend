@@ -13,7 +13,7 @@ const TechList = () => {
     <h1>Technologies used</h1>
     <div className='imgContainer'>
       {imgList.map(item => {
-        return <img src={item} />
+        return <img key={item} src={item} />
       })}
     </div>
   </div>)

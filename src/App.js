@@ -7,6 +7,7 @@ import Login from './components/login';
 import Register from './components/register';
 import Tutors from './components/tutors';
 import Questions from './components/questions';
+import Message from './components/message';
 
 function App() {
   const [activePage,setActivePage] = useState({
@@ -31,6 +32,7 @@ function App() {
       {activePage.register && <Register />}
       {activePage.tutors && <Tutors />}
       {activePage.questions && <Questions />}
+      <Message />
     </div>
   );
 }

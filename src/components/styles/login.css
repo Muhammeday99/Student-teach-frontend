@@ -1,11 +1,11 @@
 .loginContainer{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height:calc(100vh - 92px);
+  margin-top: 92px;
   justify-content: center;
   align-items: center;
   background-color: #FBEDE6;
-  
 }
 
 .email{
