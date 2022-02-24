@@ -1,0 +1,53 @@
+.qCardContainer{
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 10px 20px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  font-size: 16px;
+  width: 75%;
+  height: 160px;
+}
+
+.cardHeader{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cardTitle{
+  color: #FF886C;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.cardTags{
+  display: flex;
+  width: 30%;
+  justify-content: end;
+}
+
+
+.cardTags .tag{
+  display: flex;
+  margin: 0 2px;
+  padding: 6px 12px;
+  border: 1px solid black;
+  border-radius: 20px;
+  justify-content: end;
+}
+
+.cardFooter{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cardFooter .footerLeft{
+  display: flex;
+  width: 10%;
+  justify-content: space-between;
+}

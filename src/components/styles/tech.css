@@ -1,0 +1,16 @@
+.techContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: #F9F9F9
+}
+
+.imgContainer{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 20px;
+}
+
+h1{
+  font-size: xxx-large;
+}

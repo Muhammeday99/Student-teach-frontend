@@ -1,0 +1,18 @@
+.cardContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 3rem;
+  flex-basis: 15%;
+  text-align: start;
+}
+.avatarContainer{
+  background-color: black;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,51 @@
+.container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  height: 500px;
+}
+
+
+.gettingStarted{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+}
+
+.buttonContainer{
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+.btnPrimary{
+  display: flex;
+  font-weight: bolder;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 16px;
+  background: #FFFFFF;
+  /* Container / Border */
+  color: #1A1A1A;
+
+  border: 2px solid #1A1A1A;
+  box-sizing: border-box;
+  /* Shadow / Flat */
+
+  box-shadow: 2px 2px 0px #1A1A1A;
+  border-radius: 8px;
+}
+
+.btnSecondary{
+  display: flex;
+  font-weight: bolder;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 16px;
+  background: #FF886C;
+  border-radius: 8px;
+}
+

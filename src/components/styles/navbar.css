@@ -1,0 +1,45 @@
+.nav{
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  align-items: center;
+  width: 100vw;
+}
+
+.navBtnContainer{
+  display: flex;
+  width: 25%;
+  justify-content: space-evenly;
+  font-size: large;
+  font-weight: bold;
+}
+
+.btnPrimary{
+  display: flex;
+  font-weight: bolder;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 16px;
+  background: #FFFFFF;
+  /* Container / Border */
+
+  border: 2px solid #1A1A1A;
+  box-sizing: border-box;
+  /* Shadow / Flat */
+
+  box-shadow: 2px 2px 0px #1A1A1A;
+  border-radius: 8px;
+}
+
+.btnSecondary{
+  display: flex;
+  font-weight: bolder;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 16px;
+  background: #FF886C;
+  border-radius: 8px;
+}
+

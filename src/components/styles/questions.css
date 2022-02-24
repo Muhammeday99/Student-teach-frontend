@@ -1,0 +1,33 @@
+.qCardsContainer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.qheader{
+  display: flex;
+  width: 100%;
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qheader .headerLeft{
+  display: flex;
+  width: 25%;
+  align-items: center;
+  padding: 50px 20px;
+  justify-content: space-evenly;
+}
+
+.qheader .headerRight{
+  display: flex;
+  width: 25%;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-evenly;
+}
+.qContainer{
+  padding: 20px;
+}
