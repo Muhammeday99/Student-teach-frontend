@@ -83,7 +83,7 @@ export const AuthProvider = (props) => {
 
                     setSession(accessToken);
 
-                    const response = await axios.get('auth/getById');
+                    const response = await axios.get('auth/me');
                     const user = response.data;
 
                     dispatch({
@@ -130,7 +130,7 @@ export const AuthProvider = (props) => {
 
             const payload = JSON.parse(atob(encodedPayload));
 
-            const user = payload.student; // get user from jwt
+            const user = payload; // get user from jwt
 
             setSession(token);
 
