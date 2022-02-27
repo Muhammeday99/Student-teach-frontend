@@ -31,9 +31,8 @@ const Landing = () => {
     <DBDesign />
     <Documentation />
     <div className='cardsContainer'>
-      {cards.map(card => {
-        return <PersonCard name={card.name} key={card.name} description={card.description} />
-      })}
+      <h1>Our Team</h1>
+      <img src='/images/peers.png' className='main-image'></img>
     </div>
   </div>)
 }

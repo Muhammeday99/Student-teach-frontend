@@ -147,6 +147,36 @@ export const AuthProvider = (props) => {
         }
     };
 
+    const signInGoogle = async (response) => {
+        var id_token = response.tokenId;
+        try {
+            const data = await axios.post('auth/signin/google', {
+                token: id_token
+            });
+
+            const token = data.data;
+
+            const [encodedHeader, encodedPayload, signature] = token.split('.');
+
+            const payload = JSON.parse(atob(encodedPayload));
+
+            const user = payload; // get user from jwt
+
+            setSession(token);
+
+            setMessage("You're logged in", "success");
+
+            dispatch({
+              type: 'LOGIN',
+              payload: {
+                user
+              }
+            });
+        } catch (error) {
+            setMessage(error.response.data.error, "error");
+        }
+    }
+
     const logout = async () => {
         setSession(null);
         dispatch({ type: 'LOGOUT' });
@@ -179,6 +209,7 @@ export const AuthProvider = (props) => {
                 method: 'JWT',
                 login,
                 logout,
+                signInGoogle,
                 register
             }}
         >

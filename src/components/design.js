@@ -1,15 +1,13 @@
 import React from 'react';
-import sysImg from '../assets/sys.png'
 import './styles/design.css'
 
 const SysDesign = () => {
-  return <div className='container'>
-    <div className='left'>
-      <h1>Our System Design</h1>
-      <span>We use the best technologies in a way that can serve multiple users with high quality.</span>
+  return <div>
+    <div className='design-header left'>
+      <h1 className='design-title'>Our System Design</h1>
     </div>
     <div>
-      <img src={sysImg} />
+      <img src="/images/system-design.png" className='main-image'/>
     </div>
   </div>
 }
