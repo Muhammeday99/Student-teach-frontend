@@ -8,7 +8,6 @@
 .qheader{
   display: flex;
   width: 100%;
-  margin-top: 5rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -30,4 +29,8 @@
 }
 .qContainer{
   padding: 20px;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

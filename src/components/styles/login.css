@@ -27,6 +27,9 @@
   background: #FF886C;
   border-radius: 8px;
   margin: 12px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 .loginContainer .btnPrimary{
   width: 370px;
@@ -34,18 +37,9 @@
   background: white;
   border-radius: 8px;
   margin: 12px 0px;
-}
-.loginContainer .btnPrimary div{
-  display: flex;
-  width: 100%;
+  
   justify-content: center;
-  font-size: large;
+  text-align: center;
 }
 
-.loginContainer .btnSecondary div{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-size: large;
-}
 

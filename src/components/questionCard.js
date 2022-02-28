@@ -5,7 +5,7 @@ import './styles/questionCard.css'
 const QuestionCard = (props) => {
   const { title, tags, description, author, isSolved, comments } = props.question
   
-  return (<div className='qCardContainer'>
+  return (<div className='qCardContainer' onClick={props.onClick}>
     <div className='cardHeader'>
       <span className='cardTitle'>
         {title}

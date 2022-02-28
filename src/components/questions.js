@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import Question from './question';
 import QuestionCard from './questionCard';
 import './styles/questions.css'
 
@@ -11,26 +12,51 @@ const Questions = (props) => {
     description: 'Question description Question description Question description Question description Question description ',
     author: { name: 'Muhammed Eyup' },
     comments: [
-      'comment1',
-      'comment1', 'comment1',
-      'comment1','comment1','comment1','comment1','comment1'
+      {
+        content: "comment 1",
+        creator: {
+          fullName: "Emir Sagit"
+        }
+      },
+      {
+        content: "comment 1",
+        creator: {
+          fullName: "Emir Sagit"
+        }
+      },
+      {
+        content: "comment 1",
+        creator: {
+          fullName: "Emir Sagit"
+        }
+      },
+      {
+        content: "comment 1",
+        creator: {
+          fullName: "Emir Sagit"
+        }
+      },
     ],
     isSolved: true
   }]
 
-  return (<div className='qContainer'>
-    <div className='qheader'>
-      <div className='headerLeft'>
-        <h1>All Questions</h1>
-        <button className='btnSecondary'>Ask a question</button>
+  const [selectedQuestion, setSelectedQuestion] = useState('')
+  const [isQuestion,setIsQuestion] = useState(false)
+
+  if (!isQuestion) {
+    return (<div className='qContainer'>
+      <div className='qheader'>
+        <div className='headerLeft'>
+          <h1>All Questions</h1>
+          <button className='btnSecondary'>Ask a question</button>
+        </div>
+        <div className='headerRight'>
+          {questions.length + ' Questions'}
+        </div>
       </div>
-      <div className='headerRight'>
-        {questions.length + ' Questions'}
-      </div>
-    </div>
-    <div class="subNav">
+      <div class="subNav">
         <div className='filter'>
-          <span style={{fontSize:'larger'}}>Type</span>
+          <span style={{ fontSize: 'larger' }}>Type</span>
           <select className='select'>
             <option>Math</option>
             <option>Physics</option>
@@ -39,15 +65,21 @@ const Questions = (props) => {
         </div>
         <div className='searchContainer'>
           <BsSearch size='30' />
-          <input type='search' placeholder='Search' className='search'/>
+          <input type='search' placeholder='Search' className='search' />
         </div>
       </div>
       <div className='qCardsContainer'>
         {questions.map(card => {
-          return <QuestionCard question={card} />
+          return <QuestionCard question={card} onClick={() => {
+            setSelectedQuestion(card)
+            setIsQuestion(true)
+          }} />
         })}
       </div>
-  </div>)
+    </div>)
+  } else {
+    return <Question question={selectedQuestion} />
+  }
 }
 
 export default Questions

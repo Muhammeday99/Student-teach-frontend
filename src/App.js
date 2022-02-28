@@ -9,6 +9,7 @@ import Tutors from './components/tutors';
 import Questions from './components/questions';
 import Message from './components/message';
 import useAuth from './hooks/useAuth';
+import Profile from './components/profile';
 
 function App() {
   // TODO: if auth context has user, show profile component rather than login - register 
@@ -38,6 +39,7 @@ function App() {
       {(activePage.login || activePage.register || activePage.profile) && isAuthenticated && <Landing />}
       {activePage.tutors && <Tutors />}
       {activePage.questions && <Questions />}
+      {activePage.profile && <Profile />}
       <Message />
     </div>
   );
