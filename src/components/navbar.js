@@ -6,11 +6,7 @@ import './styles/navbar.css'
 const NavBar = (props) => {
   const { user, isAuthenticated } = useAuth();
   let avatarUrl = "/avatar.png";
-  if (isAuthenticated) {
-    if (user.student.avatar) {
-      avatarUrl = user.student.avatar;
-    }
-  }
+
   const menuButtonList = ['Home', 'Tutors', 'Questions']
   return (
     <div className='nav'>
@@ -26,10 +22,14 @@ const NavBar = (props) => {
       </div>
       {
         isAuthenticated ?
-          <button className='profile-container'>
-            <img src={avatarUrl} width={40} height={40}></img>
-            <p>{user.student.firstName}</p>
-          </button>
+          <>
+            <button className='profile-container'>
+              <img src={avatarUrl} width={40} height={40}></img>
+              <p>{user.firstName}</p>
+            </button>
+            <div className=''>
+            </div>
+          </>
           :
           <div className='navBtnContainer'>
             <button className='btnPrimary' onClick={() => {
