@@ -1,13 +1,9 @@
 import React from 'react';
+import LoginViaGoogle from './loginViaGoogle';
 import './styles/gettingStarted.css'
-import star from '../assets/Stylestar.png'
-import { BsGoogle } from 'react-icons/bs'
-import GoogleLogin from 'react-google-login';
 
 const GettingStarted = () => {
-  const responseGoogle = (response) => {
-    console.log(response);
-  }
+
 
   return (<div className='container'>
     <div className='gettingStarted'>
@@ -18,16 +14,7 @@ const GettingStarted = () => {
       <span>Connect students with other students and to create an environment where students help each other out!</span>
       <div className='buttonContainer'>
         <a className='btnPrimary' href='#documentation'>Get Started</a>
-        <GoogleLogin
-          clientId="157063568115-nd824sg6j2s1f43so3kvle22nt734opr.apps.googleusercontent.com"
-          render={renderProps => (
-            <button onClick={renderProps.onClick} disabled={renderProps.disabled}><a className='btnSecondary'><BsGoogle />&nbsp; Login with Google </a></button>
-          )}
-          buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={'single_host_origin'}
-        />
+        <LoginViaGoogle />
       </div>
     </div>
   </div>)

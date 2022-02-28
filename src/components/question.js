@@ -34,10 +34,10 @@ const Question = (props) => {
         <span>{description}</span>
       </div>
       <div className='cardFooter'>
-        <div className='footerLeft'>
-          <span>{comments.length + ' Comments'}</span>
-          <span className='solved'>
-            Solved</span>
+        <div className=''>
+          <p>{comments.length + ' Comments'}</p>
+          <p className='solved'>
+            Solved</p>
         </div>
         {author &&<div className='footerRight'>{author.fullName}</div>}
       </div>

@@ -10,6 +10,7 @@ const Tutors = () => {
   
   useEffect(() => {
     axiosInt.get('/tutors/').then((res) => {
+      console.log(res);
       setTutors(res.data)
     }) 
   },[]);
