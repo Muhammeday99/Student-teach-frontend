@@ -48,6 +48,6 @@
 
 .cardFooter .footerLeft{
   display: flex;
-  width: 10%;
+  width: 15%;
   justify-content: space-between;
 }

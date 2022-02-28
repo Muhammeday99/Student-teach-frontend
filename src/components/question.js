@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axiosInt from '../utils/axios';
 import './styles/questionCard.css'
 import './styles/questions.css'
 
 const Question = (props) => {
 
-  const { title, tags, description, author, isSolved, comments } = props.question
-
+  const { _id,title, subjects, description, isSolved,student, comments } = props.question
+  const [author, setAuthor] = useState('')
+  const [newComment,setNewComment] = useState('')
+  useEffect(() => {
+    axiosInt.get('/tutors/' + student).then((res) => {
+      setAuthor(res.data)
+    }) 
+  }, []);
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axiosInt.post(`'/questions/${_id}/comments`,{content:newComment}).then((res)=>console.log(res))
+  }
   return (<div className='qContainer'>
     <div className='qCardContainer' style={{border:'none', borderBottom:'solid 2px black', borderRadius:'0'}}>
       <div className='cardHeader'>
@@ -13,8 +25,8 @@ const Question = (props) => {
           {title}
         </span>
         <div className='cardTags'>
-          {tags.map((tag) => {
-            return <div className='tag'>{tag}</div>
+          {subjects.map((tag) => {
+            return <div className='tag'>{tag.title}</div>
           })}
         </div>
       </div>
@@ -27,7 +39,7 @@ const Question = (props) => {
           <span className='solved'>
             Solved</span>
         </div>
-        <div className='footerRight'>{author.name}</div>
+        {author &&<div className='footerRight'>{author.fullName}</div>}
       </div>
     </div>
     <div>
@@ -44,12 +56,12 @@ const Question = (props) => {
         </div>
       })}
     </div>
-    <div className='qCardContainer'>
-      <input type='text' placeholder="Write your answer..." className='search'/>
+    <form className='qCardContainer'>
+      <input type='text' placeholder="Write your answer..." className='search' onChange={(e)=>{setNewComment(e)}}/>
       <div style={{ display:'flex',width:'100%' ,justifyContent:'end'}}>
-        <button className='btnSecondary'>Post</button>
+        <button className='btnSecondary' onClick={(e) => handleSubmit(e)}>Post</button>
       </div>
-    </div>
+    </form>
   </div>)
 }
 

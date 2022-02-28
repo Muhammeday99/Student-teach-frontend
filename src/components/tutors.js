@@ -1,26 +1,18 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import PersonCard from './personCard';
 import './styles/tutors.css'
 import { BsSearch } from 'react-icons/bs';
+import axiosInt from '../utils/axios'
 
 
 const Tutors = () => {
-  const tutors = [{
-    name: 'Abdulrahman Alfawal',
-    description: "Body placeholder for text paragraph, a paragraph is a self-contained unit of text description."
-  },
-  {
-    name: 'Abdulrahman Alfawal',
-    description: "Body placeholder for text paragraph, a paragraph is a self-contained unit of text description."
-  },
-  {
-    name: 'Abdulrahman Alfawal',
-    description: "Body placeholder for text paragraph, a paragraph is a self-contained unit of text description."
-  },
-  {
-    name: 'Abdulrahman Alfawal',
-    description: "Body placeholder for text paragraph, a paragraph is a self-contained unit of text description."
-  }]
+  const [tutors,setTutors] = useState([])
+  
+  useEffect(() => {
+    axiosInt.get('/tutors/').then((res) => {
+      setTutors(res.data)
+    }) 
+  },[]);
 
   return (
     <div>
@@ -40,7 +32,7 @@ const Tutors = () => {
       </div>
       <div className='cardsContainer'>
         {tutors.map(card => {
-          return <PersonCard name={card.name} description={card.description} />
+          return <PersonCard name={card.fullName} />
         })}
       </div>
     </div>

@@ -1,44 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import Question from './question';
 import QuestionCard from './questionCard';
 import './styles/questions.css'
+import axiosInt from '../utils/axios';
 
 const Questions = (props) => {
 
-  const questions = [{
-    title: 'Question title',
-    tags: ['Math', 'Pyhisics'],
-    description: 'Question description Question description Question description Question description Question description ',
-    author: { name: 'Muhammed Eyup' },
-    comments: [
-      {
-        content: "comment 1",
-        creator: {
-          fullName: "Emir Sagit"
-        }
-      },
-      {
-        content: "comment 1",
-        creator: {
-          fullName: "Emir Sagit"
-        }
-      },
-      {
-        content: "comment 1",
-        creator: {
-          fullName: "Emir Sagit"
-        }
-      },
-      {
-        content: "comment 1",
-        creator: {
-          fullName: "Emir Sagit"
-        }
-      },
-    ],
-    isSolved: true
-  }]
+  const [questions, setQuestions] = useState([])
+  
+  useEffect(() => {
+    axiosInt.get('/questions/').then((res) => {
+      setQuestions(res.data)
+    }) 
+  },[]);
 
   const [selectedQuestion, setSelectedQuestion] = useState('')
   const [isQuestion,setIsQuestion] = useState(false)
