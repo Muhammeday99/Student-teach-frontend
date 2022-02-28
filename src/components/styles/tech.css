@@ -1,7 +1,8 @@
 .techContainer{
   display: flex;
   flex-direction: column;
-  background-color: #F9F9F9
+  background-color: #F9F9F9;
+  padding-bottom: 2em;
 }
 
 .imgContainer{

@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Landing from './components/landing';
 import NavBar from './components/navbar';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Login from './components/login';
 import Register from './components/register';
 import Tutors from './components/tutors';
@@ -10,9 +10,9 @@ import Questions from './components/questions';
 import Message from './components/message';
 import useAuth from './hooks/useAuth';
 import Profile from './components/profile';
+import DocumentMeta from 'react-document-meta';
 
 function App() {
-  // TODO: if auth context has user, show profile component rather than login - register 
   const { isAuthenticated } = useAuth();
   const [activePage, setActivePage] = useState({
     home: true,
@@ -26,7 +26,16 @@ function App() {
     return Object.keys(activePage).filter((key) => activePage[key] === true)[0]
   }
 
+  const meta = {
+    title: 'Students Teach',
+    description: 'Platform where students teach students.',
+    meta: {
+      charset: 'utf-8'
+    }
+  };
+
   return (
+    <DocumentMeta {...meta}>
     <div className="App">
       <NavBar setPage={(page) => {
         const prev = prevPage()
@@ -42,6 +51,7 @@ function App() {
       {activePage.profile && <Profile />}
       <Message />
     </div>
+    // </DocumentMeta>
   );
 }
 
