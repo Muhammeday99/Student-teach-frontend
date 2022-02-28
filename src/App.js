@@ -51,7 +51,7 @@ function App() {
       {activePage.profile && <Profile />}
       <Message />
     </div>
-    // </DocumentMeta>
+  </DocumentMeta>
   );
 }
 
