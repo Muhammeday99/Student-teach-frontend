@@ -27,7 +27,7 @@
       "react-app",
       "react-app/jest"
     ],
-    "rules": { // rules configuration here <-----
+    "rules": {
             "no-unused-vars": "off" 
         }
   },
